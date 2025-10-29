@@ -46,7 +46,7 @@ header {
 
 .logo {
     font-size: 2rem;
-    font-weight: 900;
+    font-weight: 650;
     letter-spacing: 2px;
     position: relative;
     z-index: 2;
@@ -148,11 +148,13 @@ header {
 }
 
 /* Hero Section */
+/* Третий вариант Hero Section */
 .hero {
     height: 100vh;
     display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Контент прижимается к низу */
     align-items: center;
-    justify-content: center;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -162,12 +164,14 @@ header {
     background-repeat: no-repeat;
     color: var(--secondary-color);
     margin-top: 80px;
+    padding-bottom: 2 0px; /* Отступ от нижнего края */
 }
 
 .hero-content {
     max-width: 800px;
     z-index: 2;
     padding: 0 20px;
+    margin-bottom: 50px; /* Дополнительный отступ снизу */
 }
 
 .hero h1 {
