@@ -94,3 +94,28 @@ window.addEventListener('resize', function() {
 window.addEventListener('load', function() {
     document.body.classList.add('loaded');
 });
+
+// Contact items interaction
+document.addEventListener('DOMContentLoaded', function() {
+    const contactItems = document.querySelectorAll('.contact-item');
+    
+    contactItems.forEach(item => {
+        // Add click feedback
+        item.addEventListener('click', function(e) {
+            // Add temporary active state
+            this.style.transform = 'translateY(-5px) scale(0.98)';
+            
+            setTimeout(() => {
+                this.style.transform = 'translateY(-8px)';
+            }, 150);
+        });
+        
+        // Add keyboard navigation
+        item.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                this.click();
+            }
+        });
+    });
+});
